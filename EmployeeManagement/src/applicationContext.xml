@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="employeeBean" class="com.training.com.Employee">
+
+		<property name="empId" value="102"></property>
+		<property name="name" value="Bunty Patil"></property>
+		<property name="salary" value="500"></property>
+		<property name="technologyList">
+			<list>
+				<value> This is a List 1</value>
+				<value> This is a List 2</value>
+				<value> This is a List 3</value>
+			</list>
+		</property>
+		<property name="perAddress" ref="add1"></property>  <!-- "perAddress" is a object name of class Address -->
+
+		<property name="projects">  <!-- "projects" is a object name of class Projects -->
+			<list>
+				<ref bean="project1"></ref>
+				<ref bean="project2"></ref>
+				<ref bean="project3"></ref>
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="add1" class="com.training.com.Address">
+		<property name="street" value="Villo Poonawalla Road"></property>
+		<property name="cityName" value="Pune"></property>
+		<property name="state" value="Maharashtra"></property>
+		<property name="societyName" value="Dhere Bangla"></property>
+		<property name="flatNo" value="963"></property>
+	</bean>
+
+
+	<bean id="project1" class="com.training.com.Projects">
+		<property name="projectName" value="Customer Session Portal"></property>
+		<property name="projectManager" value="Madhur"></property>
+		<property name="duration" value="234 Days"></property>
+	</bean>
+
+
+	<bean id="project2" class="com.training.com.Projects">
+
+		<property name="projectName" value="Retail Banking"></property>
+		<property name="projectManager" value="Madhur"></property>
+		<property name="duration" value="234 Days"></property>
+	</bean>
+
+	<bean id="project3" class="com.training.com.Projects">
+
+		<property name="projectName" value="Stakeholder Management"></property>
+		<property name="projectManager" value="Madhur"></property>
+		<property name="duration" value="234 Days"></property>
+	</bean>
+
+
+</beans>
