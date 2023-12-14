@@ -4,10 +4,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainClass {
+	
 	public static void main(String[] args) {
 		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		Profile p1=(Profile)context.getBean("profileBean");
+		Employee p1=(Employee)context.getBean("empDetailBean");
 		System.out.println(p1);
 	}
+
 }
